@@ -1,7 +1,7 @@
 SHELL := /bin/bash
 .DEFAULT_GOAL := help
 .PHONY: $(shell egrep -o ^[a-zA-Z_-]+: $(MAKEFILE_LIST) | sed 's/://')
-SOURCE_DIR := $(CURDIR)
+SOURCE_DIR := $(CURDIR)/src
 
 init: ## initialize project 
 	@cd $(SOURCE_DIR) && \
