@@ -3,7 +3,7 @@
 # ---------------------------------
 resource "aws_vpc" "vpc" {
   cidr_block                       = "192.168.0.0/20"
-  instance_tenancy                 = "default" # 専用・共有ハードウェアを死闘するか否か
+  instance_tenancy                 = "default" # 専用・共有ハードウェアを使用するか否か
   enable_dns_support               = true
   enable_dns_hostnames             = true  # DNSによる名前解決を有効化するか
   assign_generated_ipv6_cidr_block = false # ipv6を有効化するか
@@ -11,7 +11,7 @@ resource "aws_vpc" "vpc" {
   tags = {
     Name        = "${var.project}-${var.environment}-vpc"
     Project     = var.project
-    environment = var.environment
+    Environment = var.environment
   }
 }
 
@@ -27,7 +27,7 @@ resource "aws_subnet" "public_subnet_1a" {
   tags = {
     Name        = "${var.project}-${var.environment}-public-subnet-1a"
     Project     = var.project
-    environment = var.environment
+    Environment = var.environment
     Type        = "public"
   }
 }
@@ -41,7 +41,7 @@ resource "aws_subnet" "public_subnet_1c" {
   tags = {
     Name        = "${var.project}-${var.environment}-public-subnet-1c"
     Project     = var.project
-    environment = var.environment
+    Environment = var.environment
     Type        = "public"
   }
 }
@@ -55,7 +55,7 @@ resource "aws_subnet" "private_subnet_1a" {
   tags = {
     Name        = "${var.project}-${var.environment}-private-subnet-1a"
     Project     = var.project
-    environment = var.environment
+    Environment = var.environment
     Type        = "private"
   }
 }
@@ -69,7 +69,7 @@ resource "aws_subnet" "private_subnet_1c" {
   tags = {
     Name        = "${var.project}-${var.environment}-private-subnet-1c"
     Project     = var.project
-    environment = var.environment
+    Environment = var.environment
     Type        = "private"
   }
 }
